@@ -76,7 +76,7 @@ class PdfMerger
     /**
      * @throws RuntimeException
      */
-    public function save(string $outputPath = 'newfile.pdf', string $outputMode = 'file'): bool
+    public function save(string $outputPath = 'newfile.pdf', string $outputMode = 'file'): string|bool
     {
         // output operations
         $mode = $this->_switchMode($outputMode);

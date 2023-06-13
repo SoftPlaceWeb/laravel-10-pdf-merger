@@ -1,5 +1,5 @@
 {
-    "name": "oriceon/laravel-pdf-merger",
+    "name": "softplaceweb/laravel-10-pdf-merger",
     "description": "Laravel Pdf Merger",
     "minimum-stability": "stable",
     "license": "MIT",
@@ -11,7 +11,7 @@
     ],
     "authors": [
         {
-            "name": "Valentin Ivașcu"
+            "name": "Softplaceweb"
         }
     ],
     "require": {
@@ -22,16 +22,16 @@
     },
     "autoload": {
         "psr-4": {
-            "Oriceon\\PdfMerger\\": "src/"
+            "Softplaceweb\\PdfMerger\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Oriceon\\PdfMerger\\PdfMergerServiceProvider"
+                "Softplaceweb\\PdfMerger\\PdfMergerServiceProvider"
             ],
             "aliases": {
-                "PdfMerger": "Oriceon\\PdfMerger\\Facades\\PdfMerger"
+                "PdfMerger": "Softplaceweb\\PdfMerger\\Facades\\PdfMerger"
             }
         }
     }

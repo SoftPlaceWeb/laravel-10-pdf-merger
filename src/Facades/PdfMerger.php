@@ -1,6 +1,6 @@
 <?php
 
-namespace Oriceon\PdfMerger\Facades;
+namespace Softplaceweb\PdfMerger\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

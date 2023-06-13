@@ -1,6 +1,6 @@
 <?php
 
-namespace Oriceon\PdfMerger;
+namespace Softplaceweb\PdfMerger;
 
 use Illuminate\Support\Facades\Config;
 

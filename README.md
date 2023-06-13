@@ -1,21 +1,21 @@
 # Laravel PDF Merger based TCPDF
-[![Latest Stable Version](https://poser.pugx.org/oriceon/laravel-pdf-merger/v/stable)](https://packagist.org/packages/oriceon/laravel-pdf-merger) [![Total Downloads](https://poser.pugx.org/oriceon/laravel-pdf-merger/downloads)](https://packagist.org/packages/oriceon/laravel-pdf-merger) [![Latest Unstable Version](https://poser.pugx.org/oriceon/laravel-pdf-merger/v/unstable)](https://packagist.org/packages/oriceon/laravel-pdf-merger) [![License](https://poser.pugx.org/oriceon/laravel-pdf-merger/license)](https://packagist.org/packages/oriceon/laravel-pdf-merger)
+[![Latest Stable Version](https://poser.pugx.org/softplaceweb/laravel-10-pdf-merger/v/stable)](https://packagist.org/packages/softplaceweb/laravel-10-pdf-merger) [![Total Downloads](https://poser.pugx.org/softplaceweb/laravel-10-pdf-merger/downloads)](https://packagist.org/packages/softplaceweb/laravel-10-pdf-merger) [![Latest Unstable Version](https://poser.pugx.org/softplaceweb/laravel-10-pdf-merger/v/unstable)](https://packagist.org/packages/softplaceweb/laravel-10-pdf-merger) [![License](https://poser.pugx.org/softplaceweb/laravel-10-pdf-merger/license)](https://packagist.org/packages/softplaceweb/laravel-10-pdf-merger)
 
 A simple [Laravel](http://www.laravel.com) service provider with some basic configuration for including the [TCPDF library](http://www.tcpdf.org/) to allow you to merge PDF's in your Laravel application.
 
 ## Installation
 
-The Laravel PDF Merger service provider can be installed via [composer](http://getcomposer.org) by requiring the `oriceon/laravel-pdf-merger` package in your project's `composer.json`.
+The Laravel PDF Merger service provider can be installed via [composer](http://getcomposer.org) by requiring the `softplaceweb/laravel-10-pdf-merger` package in your project's `composer.json`.
 
 ```
-composer require oriceon/laravel-pdf-merger
+composer require softplaceweb/laravel-10-pdf-merger
 ```
 
 for lumen, you should add the following lines:
 
 ```php
-$app->register(Oriceon\PdfMerger\PdfMergerServiceProvider::class);
-class_alias(Oriceon\PdfMerger\Facades\TCPDF::class, 'PDF');
+$app->register(Softplaceweb\PdfMerger\PdfMergerServiceProvider::class);
+class_alias(Softplaceweb\PdfMerger\Facades\TCPDF::class, 'PDF');
 ```
 
 That's it! You're good to go.
@@ -23,7 +23,7 @@ That's it! You're good to go.
 Here is a little example:
 
 ```php
-use Oriceon\PdfMerger\Facades\PdfMerger;
+use Softplaceweb\PdfMerger\Facades\PdfMerger;
 
 PdfMerger::addPDF('path/to/pdf1.pdf', 1)
 ->addPDF('path/to/pdf2.pdf', 'all')
@@ -34,7 +34,7 @@ PdfMerger::addPDF('path/to/pdf1.pdf', 1)
 or sending pdf's as array ...
 
 ```php
-use Oriceon\PdfMerger\Facades\PdfMerger;
+use Softplaceweb\PdfMerger\Facades\PdfMerger;
 
 PdfMerger::addPDF([
     [
@@ -56,7 +56,7 @@ You can extend functionality for this class and for a list of all available func
 Laravel Pdf Merger comes with some basic configuration.
 If you want to override the defaults, you can publish the config, like so:
 
-    php artisan vendor:publish --provider="Oriceon\PdfMerger\PdfMergerServiceProvider"
+    php artisan vendor:publish --provider="Softplaceweb\PdfMerger\PdfMergerServiceProvider"
 
 Now access `config/pdf-merger.php` to customize.
 
@@ -67,5 +67,6 @@ Now access `config/pdf-merger.php` to customize.
 
 ## Credits
 
+ * [oriceon/laravel-pdf-merger](https://github.com/oriceon/laravel-pdf-merger)
  * [DALTCORE/lara-pdf-merger](https://github.com/DALTCORE/lara-pdf-merger)
  * [elibyy/tcpdf-laravel](https://github.com/elibyy/tcpdf-laravel)

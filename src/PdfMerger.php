@@ -2,6 +2,10 @@
 
 namespace Softplaceweb\PdfMerger;
 
+use AntonAm\PDFVersionConverter\Converter\GhostscriptConverter;
+use AntonAm\PDFVersionConverter\Converter\GhostscriptConverterCommand;
+use AntonAm\PDFVersionConverter\Guesser\RegexGuesser;
+use PHPUnit\Util\Filesystem;
 use RuntimeException;
 
 class PdfMerger
@@ -135,6 +139,8 @@ class PdfMerger
                 $fileOrientation = $orientation;
             }
 
+            $this->convertToCompatibleVersion($filePath);
+
             $size  = [];
             $count = $this->_tcpdf->setSourceFile($filePath);
 
@@ -234,5 +240,28 @@ class PdfMerger
         }
 
         return $newpages;
+    }
+
+    private function convertToCompatibleVersion(string $filePath):void
+    {
+        if (!$this->isCompatibleVersion($filePath))
+        {
+            $this->makeCompatibleVersion($filePath);
+        }
+    }
+
+    private function isCompatibleVersion(string $filePath):bool
+    {
+        $guesser = new RegexGuesser();
+        return $guesser->guess($filePath) === '1.3' || $guesser->guess($filePath) === '1.4';
+    }
+
+    private function makeCompatibleVersion(string $filePath):void
+    {
+        $command = new GhostscriptConverterCommand();
+        $filesystem = new \Symfony\Component\Filesystem\Filesystem();
+
+        $converter = new GhostscriptConverter($command, $filesystem);
+        $converter->convert($filePath, '1.4', true);
     }
 }

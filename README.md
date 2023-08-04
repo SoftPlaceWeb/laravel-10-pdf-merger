@@ -3,6 +3,11 @@
 
 A simple [Laravel](http://www.laravel.com) service provider with some basic configuration for including the [TCPDF library](http://www.tcpdf.org/) to allow you to merge PDF's in your Laravel application.
 
+## Requirements
+
+- PHP 8.0+
+- Ghostscript (gs command on Linux)
+
 ## Installation
 
 The Laravel PDF Merger service provider can be installed via [composer](http://getcomposer.org) by requiring the `softplaceweb/laravel-10-pdf-merger` package in your project's `composer.json`.

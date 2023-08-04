@@ -3,6 +3,10 @@
 
 A simple [Laravel](http://www.laravel.com) service provider with some basic configuration for including the [TCPDF library](http://www.tcpdf.org/) to allow you to merge PDF's in your Laravel application.
 
+Compatibility from 1.3 to 1.7 versions, if attempt to merge version greater than 1.4 it convert through Ghosthscript.
+
+The final result is a merged pdf file v 1.7  
+
 ## Requirements
 
 - PHP 8.0+
@@ -75,3 +79,4 @@ Now access `config/pdf-merger.php` to customize.
  * [oriceon/laravel-pdf-merger](https://github.com/oriceon/laravel-pdf-merger)
  * [DALTCORE/lara-pdf-merger](https://github.com/DALTCORE/lara-pdf-merger)
  * [elibyy/tcpdf-laravel](https://github.com/elibyy/tcpdf-laravel)
+ * [anton-am/pdf-version-converter](https://github.com/Anton-Am/pdf-version-converter)

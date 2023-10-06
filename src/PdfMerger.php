@@ -16,6 +16,8 @@ class PdfMerger
 
     private $_tcpdf;
 
+    private ?string $ghostscript = null;
+
     public function __construct($app)
     {
         $this->app = $app;
@@ -29,6 +31,11 @@ class PdfMerger
         $this->_tcpdf = new TCPDF();
 
         return $this;
+    }
+
+    public function setGhostscript(string $ghostscript): void
+    {
+        $this->ghostscript = $ghostscript;
     }
 
     /**
@@ -258,7 +265,7 @@ class PdfMerger
 
     private function makeCompatibleVersion(string $filePath):void
     {
-        $command = new GhostscriptConverterCommand();
+        $command = new GhostscriptConverterCommand($this->ghostscript);
         $filesystem = new \Symfony\Component\Filesystem\Filesystem();
 
         $converter = new GhostscriptConverter($command, $filesystem);

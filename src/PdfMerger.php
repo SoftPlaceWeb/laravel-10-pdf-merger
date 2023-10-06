@@ -16,7 +16,7 @@ class PdfMerger
 
     private $_tcpdf;
 
-    private ?string $ghostscript = null;
+    private string $ghostscript = 'gs -sDEVICE=pdfwrite -dCompatibilityLevel=%s -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH';
 
     public function __construct($app)
     {

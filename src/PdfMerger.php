@@ -2,10 +2,9 @@
 
 namespace Softplaceweb\PdfMerger;
 
-use AntonAm\PDFVersionConverter\Converter\GhostscriptConverter;
-use AntonAm\PDFVersionConverter\Converter\GhostscriptConverterCommand;
-use AntonAm\PDFVersionConverter\Guesser\RegexGuesser;
-use PHPUnit\Util\Filesystem;
+use Softplaceweb\PdfMerger\Converter\GhostscriptConverter;
+use Softplaceweb\PdfMerger\Converter\GhostscriptConverterCommand;
+use Softplaceweb\PdfMerger\Guesser\RegexGuesser;
 use RuntimeException;
 
 class PdfMerger

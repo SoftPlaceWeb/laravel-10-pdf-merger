@@ -64,7 +64,7 @@ class PdfMerger
      *
      * @throws RuntimeException if there are no PDFs to merge
      */
-    public function merge(string $orientation = null, array $meta = []): PdfMerger
+    public function merge(?string $orientation = null, array $meta = []): PdfMerger
     {
         $this->_doMerge($orientation, $meta);
 
@@ -76,7 +76,7 @@ class PdfMerger
      *
      * @throws RuntimeException if there are no PDFs to merge
      */
-    public function duplexMerge(string $orientation = null, array $meta = []): PdfMerger
+    public function duplexMerge(?string $orientation = null, array $meta = []): PdfMerger
     {
         $this->_doMerge($orientation, $meta, true);
 
@@ -128,7 +128,7 @@ class PdfMerger
      *
      * @array $meta [title => $title, author => $author, subject => $subject, keywords => $keywords, creator => $creator]
      */
-    private function _doMerge(string $orientation = null, array $meta = [], bool $duplex = false): void
+    private function _doMerge(?string $orientation = null, array $meta = [], bool $duplex = false): void
     {
         if (count($this->_files) === 0) {
             throw new RuntimeException('No PDFs to merge.');

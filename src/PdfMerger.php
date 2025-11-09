@@ -40,7 +40,7 @@ class PdfMerger
     /**
      * Add a PDF for inclusion in the merge with a valid file path. Pages should be formatted: 1,3,6, 12-16.
      */
-    public function addPDF(mixed $filePath, mixed $pages = 'all', string $orientation = null): PdfMerger
+    public function addPDF(mixed $filePath, mixed $pages = 'all', ?string $orientation = null): PdfMerger
     {
         if (is_array($filePath)) {
             foreach ($filePath as $file) {
